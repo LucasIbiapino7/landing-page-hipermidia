@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,11 +12,23 @@
     <!-- Header -->
     <header>
       <div class="header-container">
-        <a href="#" class="logo">Logo Da Loja</a>
-        <!-- LOGICA DO BOTAO -->
-        <button id="menu-button">&#9776;</button>
-        <!-- LOGICA DO BOTAO -->
-        <nav id="menu">
+        <a href="#impacto">
+          <img
+            id="logo_header"
+            src="./img/logo.svg"
+            alt="Logo da Loja ORUS Books"
+          />
+        </a>
+
+        <button
+          id="hamburger"
+          class="hamburger"
+          aria-label="Abrir menu de navegação"
+        >
+          &#9776;
+        </button>
+        <!-- Navegação principal -->
+        <nav id="menu" aria-label="Menu principal">
           <ul>
             <li><a href="#impacto">Home</a></li>
             <li><a href="#sobre">Sobre Nós</a></li>
@@ -26,6 +38,24 @@
             <li><a href="#contato">Contato</a></li>
           </ul>
         </nav>
+        <!-- Sidebar (para resoluções menores) -->
+        <div id="sidebar" class="sidebar" aria-hidden="true">
+          <button
+            id="close-sidebar"
+            class="close-btn"
+            aria-label="Fechar menu de navegação"
+          >
+            &times;
+          </button>
+          <ul>
+            <li><a href="#impacto">Home</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#criatividade">Destaques</a></li>
+            <li><a href="#comentarios">Comentários</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
       </div>
     </header>
 
@@ -35,7 +65,11 @@
         <div class="impacto-container">
           <div class="impacto-content">
             <h1 class="impacto-title">
-              "Livros que Marcam, Histórias que Ficam."
+              <span
+                lang="en"
+                aria-label="Livros que Marcam, Histórias que Ficam"
+                >"Livros que Marcam, Histórias que Ficam."</span
+              >
             </h1>
             <div id="descricao_loja">
               <p>
@@ -47,10 +81,18 @@
                 como se fosse a sua!
               </p>
             </div>
-            <a href="#produtos" class="impacto-btn">Ir á produtos</a>
+            <a
+              href="#produtos"
+              class="impacto-btn"
+              aria-label="Ver nossos produtos"
+              >Ir aos produtos</a
+            >
           </div>
           <div class="impacto-img">
-            <img src="./img/livro.jpg" alt="Imagem em destaque" />
+            <img
+              src="./img/livro.jpg"
+              alt="Imagem de um livro aberto com fundo criativo"
+            />
           </div>
         </div>
       </section>
@@ -59,7 +101,6 @@
       <section id="sobre">
         <div class="sobre-container">
           <h2 class="sobre-title">Sobre Nós</h2>
-
           <div class="sobre-infos-container">
             <div class="sobre-cards">
               <h3 class="sobre-subtitle">Missão</h3>
@@ -112,104 +153,182 @@
           <div class="produtos-grid">
             <div class="produto">
               <div>
-                <img src="/img/main.png" alt="" />
+                <img
+                  src="/img/entendendo-algoritmos.jpg"
+                  alt="Livro entendendo Algoritmos"
+                />
               </div>
               <div class="produto-info">
-                <h3 class="produto-title">Produto 2</h3>
-                <p class="produto-content">R$ valor</p>
-                <button class="produto-btn">adicionar ao carrinho</button>
+                <h3 class="produto-title">Entendendo Algoritmos</h3>
+                <p class="produto-content">R$ 99,90</p>
+                <button
+                  class="produto-btn"
+                  aria-label="Adicionar o livro entendendo Algoritmos ao carrinho"
+                >
+                  Adicionar ao carrinho
+                </button>
               </div>
             </div>
+
             <div class="produto">
               <div>
-                <img src="/img/main.png" alt="" />
+                <img
+                  src="/img/livro.jpg"
+                  alt="Livro o universo da programação"
+                />
               </div>
               <div class="produto-info">
-                <h3 class="produto-title">Produto 2</h3>
-                <p class="produto-content">R$ valor</p>
-                <button class="produto-btn">adicionar ao carrinho</button>
+                <h3 class="produto-title">O universo da programação</h3>
+                <p class="produto-content">R$ 88,90</p>
+                <button
+                  class="produto-btn"
+                  aria-label="Adicionar o Livro o universo da programação ao carrinho"
+                >
+                  Adicionar ao carrinho
+                </button>
               </div>
             </div>
+
             <div class="produto">
               <div>
-                <img src="/img/main.png" alt="" />
+                <img src="/img/codigo_limpo.jpeg" alt="Livro código Limpo" />
               </div>
               <div class="produto-info">
-                <h3 class="produto-title">Produto 2</h3>
-                <p class="produto-content">R$ valor</p>
-                <button class="produto-btn">adicionar ao carrinho</button>
+                <h3 class="produto-title">Código Limpo</h3>
+                <p class="produto-content">R$ 70,99</p>
+                <button
+                  class="produto-btn"
+                  aria-label="Adicionar o Livro código Limpo ao carrinho"
+                >
+                  Adicionar ao carrinho
+                </button>
               </div>
             </div>
+
             <div class="produto">
               <div>
-                <img src="/img/main.png" alt="" />
+                <img
+                  src="/img/entendendo-algoritmos.jpg"
+                  alt="Livro entendendo Algoritmos"
+                />
               </div>
               <div class="produto-info">
-                <h3 class="produto-title">Produto 2</h3>
-                <p class="produto-content">R$ valor</p>
-                <button class="produto-btn">adicionar ao carrinho</button>
+                <h3 class="produto-title">Entendendo Algoritmos</h3>
+                <p class="produto-content">R$ 99,90</p>
+                <button
+                  class="produto-btn"
+                  aria-label="Adicionar o livro entendendo Algoritmos ao carrinho"
+                >
+                  Adicionar ao carrinho
+                </button>
               </div>
             </div>
+
             <div class="produto">
               <div>
-                <img src="/img/main.png" alt="" />
+                <img
+                  src="/img/livro.jpg"
+                  alt="Livro o universo da programação"
+                />
               </div>
               <div class="produto-info">
-                <h3 class="produto-title">Produto 2</h3>
-                <p class="produto-content">R$ valor</p>
-                <button class="produto-btn">adicionar ao carrinho</button>
+                <h3 class="produto-title">O universo da programação</h3>
+                <p class="produto-content">R$ 88,90</p>
+                <button
+                  class="produto-btn"
+                  aria-label="Adicionar o Livro o universo da programação ao carrinho"
+                >
+                  Adicionar ao carrinho
+                </button>
               </div>
             </div>
+
             <div class="produto">
               <div>
-                <img src="/img/main.png" alt="" />
+                <img src="/img/codigo_limpo.jpeg" alt="Livro código Limpo" />
               </div>
               <div class="produto-info">
-                <h3 class="produto-title">Produto 2</h3>
-                <p class="produto-content">R$ valor</p>
-                <button class="produto-btn">adicionar ao carrinho</button>
+                <h3 class="produto-title">Código Limpo</h3>
+                <p class="produto-content">R$ 70,99</p>
+                <button
+                  class="produto-btn"
+                  aria-label="Adicionar o Livro código Limpo ao carrinho"
+                >
+                  Adicionar ao carrinho
+                </button>
               </div>
             </div>
+
             <div class="produto">
               <div>
-                <img src="/img/main.png" alt="" />
+                <img
+                  src="/img/entendendo-algoritmos.jpg"
+                  alt="Livro entendendo Algoritmos"
+                />
               </div>
               <div class="produto-info">
-                <h3 class="produto-title">Produto 2</h3>
-                <p class="produto-content">R$ valor</p>
-                <button class="produto-btn">adicionar ao carrinho</button>
+                <h3 class="produto-title">Entendendo Algoritmos</h3>
+                <p class="produto-content">R$ 99,90</p>
+                <button
+                  class="produto-btn"
+                  aria-label="Adicionar o livro entendendo Algoritmos ao carrinho"
+                >
+                  Adicionar ao carrinho
+                </button>
               </div>
             </div>
+
             <div class="produto">
               <div>
-                <img src="/img/main.png" alt="" />
+                <img
+                  src="/img/livro.jpg"
+                  alt="Livro o universo da programação"
+                />
               </div>
               <div class="produto-info">
-                <h3 class="produto-title">Produto 2</h3>
-                <p class="produto-content">R$ valor</p>
-                <button class="produto-btn">adicionar ao carrinho</button>
+                <h3 class="produto-title">O universo da programação</h3>
+                <p class="produto-content">R$ 88,90</p>
+                <button
+                  class="produto-btn"
+                  aria-label="Adicionar o Livro o universo da programação ao carrinho"
+                >
+                  Adicionar ao carrinho
+                </button>
               </div>
             </div>
+
             <div class="produto">
               <div>
-                <img src="/img/main.png" alt="" />
+                <img src="/img/codigo_limpo.jpeg" alt="Livro código Limpo" />
               </div>
               <div class="produto-info">
-                <h3 class="produto-title">Produto 2</h3>
-                <p class="produto-content">R$ valor</p>
-                <button class="produto-btn">adicionar ao carrinho</button>
+                <h3 class="produto-title">Código Limpo</h3>
+                <p class="produto-content">R$ 70,99</p>
+                <button
+                  class="produto-btn"
+                  aria-label="Adicionar o Livro código Limpo ao carrinho"
+                >
+                  Adicionar ao carrinho
+                </button>
               </div>
             </div>
+
             <div class="produto">
               <div>
-                <img src="/img/main.png" alt="" />
+                <img src="/img/codigo_limpo.jpeg" alt="Livro código Limpo" />
               </div>
               <div class="produto-info">
-                <h3 class="produto-title">Produto 2</h3>
-                <p class="produto-content">R$ valor</p>
-                <button class="produto-btn">adicionar ao carrinho</button>
+                <h3 class="produto-title">Código Limpo</h3>
+                <p class="produto-content">R$ 70,99</p>
+                <button
+                  class="produto-btn"
+                  aria-label="Adicionar o Livro código Limpo ao carrinho"
+                >
+                  Adicionar ao carrinho
+                </button>
               </div>
             </div>
+            
           </div>
         </div>
       </section>
@@ -222,15 +341,26 @@
           <div class="criatividade-audiobook-img">
             <img
               src="./img/entendendo-algoritmos.jpg"
-              alt="livro entendendo algoritmos"
+              alt="Capa do livro Entendendo Algoritmos"
             />
           </div>
-          <div class="audio-player">
-            <button id="play-pause-btn" class="play">▶</button>
-            <div class="progress-container">
+          <div class="audio-player" role="region" aria-label="Player de áudio">
+            <button
+              id="play-pause-btn"
+              class="play"
+              aria-label="Reproduzir áudio"
+            >
+              ▶
+            </button>
+            <div
+              class="progress-container"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
               <div id="progress-bar"></div>
             </div>
-            <span id="current-time">0:00</span> /
+            <span id="current-time" aria-live="polite">0:00</span> /
             <span id="duration">0:00</span>
           </div>
           <audio id="audio" src="./img/audiobook.mp3"></audio>
@@ -239,12 +369,12 @@
 
       <!-- Seção 5: Comentários de clientes -->
       <section id="comentarios">
+        <h2 class="comentarios-title">O que nossos clientes dizem</h2>
         <div class="comentarios-container">
-          <h2 class="comentarios-title">O que nossos clientes dizem</h2>
-          <div>
+          <div class="comentarios-scroll">
             <blockquote class="comentarios-content">
               <div class="avatar">
-                <img src="./img/main.png" alt="" />
+                <img src="./img/avatar-perfil.webp" alt="Avatar de Fernanda" />
               </div>
               <div class="comentarios-content-text">
                 <p>
@@ -252,13 +382,22 @@
                   novas realidades sem sair do lugar. Como diz Borges, 'eu sou o
                   que leio', e a leitura nos transforma profundamente.
                 </p>
-                <cite class="comentarios-cite">Fernanda</cite>
+                <div class="comentarios-footer">
+                  <cite class="comentarios-cite">Fernanda</cite>
+                  <div class="rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+                </div>
               </div>
             </blockquote>
 
             <blockquote class="comentarios-content">
               <div class="avatar">
-                <img src="./img/main.png" alt="" />
+                <img src="./img/avatar-perfil.webp" alt="Avatar de Fernanda" />
               </div>
               <div class="comentarios-content-text">
                 <p>
@@ -266,13 +405,22 @@
                   novas realidades sem sair do lugar. Como diz Borges, 'eu sou o
                   que leio', e a leitura nos transforma profundamente.
                 </p>
-                <cite class="comentarios-cite">Fernanda</cite>
+                <div class="comentarios-footer">
+                  <cite class="comentarios-cite">Fernanda</cite>
+                  <div class="rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                  </div>
+                </div>
               </div>
             </blockquote>
 
             <blockquote class="comentarios-content">
               <div class="avatar">
-                <img src="./img/main.png" alt="" />
+                <img src="./img/avatar-perfil.webp" alt="Avatar de Fernanda" />
               </div>
               <div class="comentarios-content-text">
                 <p>
@@ -280,13 +428,22 @@
                   novas realidades sem sair do lugar. Como diz Borges, 'eu sou o
                   que leio', e a leitura nos transforma profundamente.
                 </p>
-                <cite class="comentarios-cite">Fernanda</cite>
+                <div class="comentarios-footer">
+                  <cite class="comentarios-cite">Fernanda</cite>
+                  <div class="rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+                </div>
               </div>
             </blockquote>
 
             <blockquote class="comentarios-content">
               <div class="avatar">
-                <img src="./img/main.png" alt="" />
+                <img src="./img/avatar-perfil.webp" alt="Avatar de Fernanda" />
               </div>
               <div class="comentarios-content-text">
                 <p>
@@ -294,13 +451,22 @@
                   novas realidades sem sair do lugar. Como diz Borges, 'eu sou o
                   que leio', e a leitura nos transforma profundamente.
                 </p>
-                <cite class="comentarios-cite">Fernanda</cite>
+                <div class="comentarios-footer">
+                  <cite class="comentarios-cite">Fernanda</cite>
+                  <div class="rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+                </div>
               </div>
             </blockquote>
 
             <blockquote class="comentarios-content">
               <div class="avatar">
-                <img src="./img/main.png" alt="" />
+                <img src="./img/avatar-perfil.webp" alt="Avatar de Fernanda" />
               </div>
               <div class="comentarios-content-text">
                 <p>
@@ -308,13 +474,22 @@
                   novas realidades sem sair do lugar. Como diz Borges, 'eu sou o
                   que leio', e a leitura nos transforma profundamente.
                 </p>
-                <cite class="comentarios-cite">Fernanda</cite>
+                <div class="comentarios-footer">
+                  <cite class="comentarios-cite">Fernanda</cite>
+                  <div class="rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+                </div>
               </div>
             </blockquote>
 
             <blockquote class="comentarios-content">
               <div class="avatar">
-                <img src="./img/main.png" alt="" />
+                <img src="./img/avatar-perfil.webp" alt="Avatar de Fernanda" />
               </div>
               <div class="comentarios-content-text">
                 <p>
@@ -322,7 +497,16 @@
                   novas realidades sem sair do lugar. Como diz Borges, 'eu sou o
                   que leio', e a leitura nos transforma profundamente.
                 </p>
-                <cite class="comentarios-cite">Fernanda</cite>
+                <div class="comentarios-footer">
+                  <cite class="comentarios-cite">Fernanda</cite>
+                  <div class="rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+                </div>
               </div>
             </blockquote>
           </div>
@@ -333,15 +517,19 @@
       <section id="contato">
         <div class="contato-container">
           <h2 class="contato-title">Fale conosco</h2>
-          <form>
+          <form aria-labelledby="contato-title">
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" />
+            <input type="text" id="nome" name="nome" aria-required="true" />
 
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" />
+            <input type="email" id="email" name="email" aria-required="true" />
 
             <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem"></textarea>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              aria-required="true"
+            ></textarea>
 
             <button type="submit">Enviar</button>
           </form>
@@ -351,17 +539,34 @@
 
     <footer>
       <div class="footer-container">
-        <a class="footer-logo" href="#">Logo da Loja</a>
-        <p>Rua grande</p>
+        <div class="footer-infos">
+          <a class="footer-logo" href="#">ORUS BOOKS</a>
+          <a href="#impacto">
+            <img
+              id="logo_header"
+              src="./img/logo.svg"
+              alt="Logo da Loja ORUS Books"
+            />
+          </a>
+        </div>
+        <p>
+          Av. dos Portugueses, 1966 - Vila Bacanga, São Luís - MA, 65080-805
+        </p>
         <ul>
           <li>
-            <a href="#"><img src="./img/instagram.svg" alt="" /></a>
+            <a href="#" aria-label="Acessar o Instagram"
+              ><img src="./img/instagram.svg" alt="Instagram"
+            /></a>
           </li>
           <li>
-            <a href="#"><img src="./img/instagram.svg" alt="" /></a>
+            <a href="#" aria-label="Acessar o Facebook"
+              ><img src="./img/facebook.svg" alt="Facebook"
+            /></a>
           </li>
           <li>
-            <a href="#"><img src="./img/instagram.svg" alt="" /></a>
+            <a href="#" aria-label="Entrar em contato pelo WhatsApp"
+              ><img src="./img/whatsapp.svg" alt="WhatsApp"
+            /></a>
           </li>
         </ul>
       </div>

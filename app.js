@@ -44,26 +44,51 @@ audio.addEventListener("loadedmetadata", () => {
   duration.textContent = formatTime(audio.duration);
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
-  const menuButton = document.getElementById("menu-button");
-  const closeSidebar = document.getElementById("close-sidebar");
+  const hamburger = document.getElementById("hamburger");
   const sidebar = document.getElementById("sidebar");
+  const closeSidebar = document.getElementById("close-sidebar");
 
-  // Abrir o sidebar
-  menuButton.addEventListener("click", () => {
-    sidebar.style.right = "0";
+  hamburger.addEventListener("click", () => {
+    sidebar.style.right = "0"; // Abre a sidebar
   });
 
-  // Fechar o sidebar
   closeSidebar.addEventListener("click", () => {
-    sidebar.style.right = "-100%";
+    sidebar.style.right = "-250px"; // Fecha a sidebar
   });
+});
 
-  // Fechar o sidebar ao clicar fora dele (opcional)
-  sidebar.addEventListener("click", (e) => {
-    if (e.target === sidebar) {
-      sidebar.style.right = "-100%";
-    }
-  });
+// Seleciona os elementos necessários
+const carousel = document.querySelector(".comentarios-carousel");
+const prevButton = document.querySelector(".comentarios-container::before");
+const nextButton = document.querySelector(".comentarios-container::after");
+
+// Variáveis para controlar o estado do carousel
+let currentIndex = 0;
+const slideWidth = document.querySelector(".comentarios-slide").offsetWidth; // Largura de cada slide
+
+// Função para atualizar a posição do carousel
+function updateCarousel() {
+  carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+
+// Evento para o botão "Anterior"
+prevButton.addEventListener("click", () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCarousel();
+  }
+});
+
+// Evento para o botão "Próximo"
+nextButton.addEventListener("click", () => {
+  if (currentIndex < carousel.children.length - 1) {
+    currentIndex++;
+    updateCarousel();
+  }
+});
+
+// Ajuste para atualizar a largura dos slides ao redimensionar a tela
+window.addEventListener("resize", () => {
+  updateCarousel();
 });

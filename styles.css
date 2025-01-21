@@ -17,6 +17,15 @@ a {
 }
 
 /* Header */
+.header-container #logo_header {
+  width: 70px;
+  height: 70px;
+}
+.header-container #name_logo {
+  font-size: 40px;
+  position: static;
+}
+
 header {
   background: var(--primary-color);
   color: var(--bg-light);
@@ -25,11 +34,11 @@ header {
   width: 100%;
 }
 
-
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  padding: 0px 20px 0px 20px;
   justify-content: space-between;
   align-items: center;
 }
@@ -38,16 +47,73 @@ header {
   font-size: 1.5rem;
   font-weight: bold;
 }
-
 nav ul {
-  list-style: none;
   display: flex;
-  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-nav a {
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
   color: white;
-  font-size: 1rem;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Botão Sanduíche */
+.hamburger {
+  display: none;
+  font-size: 40px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding-right: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #4caf50;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.close-btn {
+  background: none;
+  color: white;
+  border: 1px #4caf50 solid;
+  font-size: 40px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  float: right;
 }
 
 /* 1 seção */
@@ -73,7 +139,7 @@ nav a {
   gap: 20px;
 }
 
-.impacto-title {
+.impacto-title span {
   font-size: 2.5rem;
   color: #4caf50;
 }
@@ -229,7 +295,7 @@ nav a {
 
 .produto img {
   width: calc(100%);
-  height: 180px;
+  height: 300px;
   border-radius: 8px 8px 0 0;
 }
 
@@ -299,7 +365,6 @@ nav a {
   border-radius: 5px;
   overflow: hidden;
   cursor: pointer;
-
 }
 
 #progress-bar {
@@ -324,12 +389,18 @@ span {
 .comentarios-container {
   max-width: 800px;
   margin: 0 auto;
+  overflow-y: auto; /* Permite o scroll vertical */
+  max-height: 400px; /* Define a altura máxima para ativar o scroll */
+  padding-right: 10px; /* Adiciona espaço para o scroll bar */
 }
 
 .comentarios-title {
   font-size: 2rem;
   color: #4caf50;
   margin-bottom: 20px;
+  top: 0;
+  background: #fff;
+  padding: 10px 0;
 }
 
 .comentarios-content {
@@ -341,7 +412,7 @@ span {
   border-radius: 10px;
   padding: 20px;
   display: flex;
-  box-shadow: 0 4px 8px rgba(0.2, 0.2, 0.2, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .avatar {
@@ -367,6 +438,28 @@ span {
   font-size: 0.9rem;
   color: #333;
   font-style: italic;
+}
+
+.comentarios-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  justify-content: space-around;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  font-size: 1.2rem;
+  color: #333; /* Cor das estrelas vazias */
+  margin-left: 2px;
+}
+
+.star.filled {
+  color: #f39c12; /* Cor das estrelas preenchidas (amarelo) */
 }
 
 /* 6 Seção */
@@ -443,9 +536,15 @@ footer {
 }
 
 .footer-logo {
-  font-size: 1.2rem;
+  font-size: 25px;
   font-weight: bold;
   color: #fff;
+}
+
+.footer-infos {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 footer p {
@@ -475,15 +574,36 @@ footer img {
   width: 30px;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px){
 
-  .header-container{
+  header{
+    padding: 10px;
+  }
+
+  .header-container {
+    max-height: 110px;
+    flex-direction: column;
+  }
+
+  .impacto-container{
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header-container {
+    flex-direction: row;
     justify-content: space-between;
     padding: 10px;
   }
-  
-  .header-container #menu-button{
-    display: flex;
+
+  nav {
+    display: none; /* Esconde o menu principal */
+  }
+
+  .hamburger {
+    display: block; /* Mostra o botão sanduíche */
   }
 
   .impacto-container {
@@ -491,14 +611,9 @@ footer img {
     gap: 10px;
   }
 
-  .comentarios-content {
-    flex-direction: column;
-  }
-
-  .avatar img {
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
+  .produto{
+    width: calc(100% - 40px);
+    max-width: 300px;
   }
 
   .criatividade-audiobook-img img {
@@ -506,4 +621,18 @@ footer img {
     max-width: 300px;
   }
 
+  .comentarios-content {
+    flex-direction: column;
+  }
+
+  .comentarios-footer{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+  }
 }
