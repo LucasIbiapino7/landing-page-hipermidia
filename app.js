@@ -29,7 +29,6 @@ audio.addEventListener("timeupdate", () => {
   progressBar.style.width = `${progressoPorcentagem}%`;
 
   currentTime.textContent = formatTime(audio.currentTime);
-
 });
 
 // Permite clicar na barra de progresso para ajustar o áudio
@@ -43,4 +42,28 @@ progressContainer.addEventListener("click", (e) => {
 // Carrega os dados de duração ao iniciar
 audio.addEventListener("loadedmetadata", () => {
   duration.textContent = formatTime(audio.duration);
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuButton = document.getElementById("menu-button");
+  const closeSidebar = document.getElementById("close-sidebar");
+  const sidebar = document.getElementById("sidebar");
+
+  // Abrir o sidebar
+  menuButton.addEventListener("click", () => {
+    sidebar.style.right = "0";
+  });
+
+  // Fechar o sidebar
+  closeSidebar.addEventListener("click", () => {
+    sidebar.style.right = "-100%";
+  });
+
+  // Fechar o sidebar ao clicar fora dele (opcional)
+  sidebar.addEventListener("click", (e) => {
+    if (e.target === sidebar) {
+      sidebar.style.right = "-100%";
+    }
+  });
 });

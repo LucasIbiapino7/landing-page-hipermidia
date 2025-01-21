@@ -25,6 +25,7 @@ header {
   width: 100%;
 }
 
+
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -256,6 +257,15 @@ nav a {
   margin-bottom: 30px;
 }
 
+.criatividade-audiobook-img img {
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.criatividade-audiobook-img img:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .audio-player {
   display: flex;
   align-items: center;
@@ -400,6 +410,7 @@ span {
   border-radius: 5px;
   font-size: 1rem;
 }
+
 #contato button {
   background: #4caf50;
   color: #fff;
@@ -410,6 +421,7 @@ span {
   font-size: 1rem;
   transition: background 0.3s;
 }
+
 #contato button:hover {
   background: #388e3c;
 }
@@ -440,6 +452,7 @@ footer p {
   font-size: 1rem;
   margin: 10px 0;
 }
+
 footer ul {
   list-style: none;
   display: flex;
@@ -447,11 +460,13 @@ footer ul {
   gap: 10px;
   margin-top: 10px;
 }
+
 footer ul li a {
   color: #fff;
   font-size: 1rem;
   transition: color 0.3s;
 }
+
 footer ul li a:hover {
   color: #ddd;
 }
@@ -460,14 +475,35 @@ footer img {
   width: 30px;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 480px) {
+
+  .header-container{
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .header-container #menu-button{
+    display: flex;
+  }
+
+  .impacto-container {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
   .comentarios-content {
     flex-direction: column;
   }
 
   .avatar img {
-    width: calc(100% - 100px);
+    width: 100px;
     height: 100px;
     border-radius: 100px;
   }
+
+  .criatividade-audiobook-img img {
+    width: calc(100% - 20px);
+    max-width: 300px;
+  }
+
 }
